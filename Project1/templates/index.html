@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scraped Data</title>
+</head>
+<body>
+    <h1>Scraped Data</h1>
+    
+    <h2>YouTube Data</h2>
+    <ul>
+        {% for video in youtube_data %}
+        <li>
+            <a href="{{ video['url'] }}">{{ video['title'] }}</a>
+            <p>Views: {{ video['views'] }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    
+    <h2>Amazon Data</h2>
+    <ul>
+        {% for product in amazon_data %}
+        <li>
+            <a href="{{ product['url'] }}">{{ product['name'] }}</a>
+            <p>Price: {{ product['price'] }}</p>
+            <p>Rating: {{ product['rating'] }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
